@@ -3,38 +3,58 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text for contrast */
+    scroll-behavior: smooth; /* Smooth scrolling */
   }
   
   /* Header */
   header {
-    background-color: #ffd700; /* Bright yellow */
-    color: black;
+    background-color: #1e1e1e; /* Dark gray */
+    color: #ffd700; /* Vibrant yellow text */
     text-align: center;
     padding: 20px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Subtle shadow */
+    transition: background-color 0.3s ease-in-out; /* Smooth hover */
+  }
+  
+  header:hover {
+    background-color: #252525; /* Slightly lighter gray */
   }
   
   header nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: black;
+    color: #ffd700; /* Bright yellow links */
     font-weight: bold;
+    transition: color 0.3s ease-in-out; /* Smooth hover effect */
   }
   
-  /* Sections with Background Image */
+  header nav a:hover {
+    color: #ffffff; /* Text turns white when hovered */
+  }
+  
+  /* Sections */
   section {
     margin: 20px;
     padding: 15px;
-    background: url('background.jpg') no-repeat center center;
-    background-size: cover; /* Makes the image scale to fit the section */
+    background: rgba(30, 30, 30, 0.9); /* Slightly transparent dark background */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: white; /* Change text color for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Enhanced shadow for depth */
+    color: #e0e0e0; /* Light text */
+    animation: fadeIn 1s ease-in-out; /* Fade-in effect */
   }
   
-  h2 {
-    color: #ffd700;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   
   /* Team Members */
@@ -47,18 +67,31 @@ body {
   
   .team-members .member {
     text-align: center;
+    transform: scale(1); /* Default size */
+    transition: transform 0.3s ease-in-out; /* Smooth hover scaling */
+  }
+  
+  .team-members .member:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
   }
   
   .team-members img {
     max-width: 100px;
     border-radius: 50%;
-    border: 3px solid #ffd700;
+    border: 3px solid #ffd700; /* Bright yellow border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
   }
   
   /* Footer */
   footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #1e1e1e; /* Dark footer */
+    color: #ffd700; /* Yellow footer text */
     text-align: center;
     padding: 10px 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  footer:hover {
+    opacity: 0.8; /* Slight fade on hover */
   }
